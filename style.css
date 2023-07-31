@@ -1,0 +1,105 @@
+h1+ul{
+    background-color: orange;
+}
+/* 
+h1바로 뒤에오는 ul을 지칭합니다
+ul로 선택하지 않은 이유는 +가 뜻하는 내용이
++앞의 내용이 특정 조건일 경우에 사용하기 때문입니다 
+즉 h1 + ul이라는 뜻은
+h1이 ul바로 앞에 있는 경우의 ul을 선택한다는 뜻
+*/
+h1~ul{
+    color: aqua;
+}
+/*
+h1뒤에 있는 ul모두~ 적용하겠다는 의미
+*/
+h3~ul{
+    color: #000;
+}
+input[type="email"]{
+    background-color: red;
+}
+
+/* 속성에 따른 선택자를 호출할 경우에는 []안에 속성을 적어서
+선택할 수 있습니다 */
+input[type="text"] {
+    font-size: 50px;
+}
+
+a[target] {
+    text-decoration: none;
+}
+
+/* 속성에 따른 선택자를 호출할 때 속성이름만 지정하면
+해당 속성이 부여된 대상만 선택할 수 있습니다 */
+
+a[href="https://naver.com"]{
+    background-color: red;
+}
+
+h2[class^="main"] {
+    color: blue;
+}
+
+/* ^ 는 해당 속성명을 포함하는 대상을 모두 선택합니다 */
+/* h2태그중에 class이름중 main으로 시작하는 대상을 모두 선택합니다 */
+
+h2[class$="_txt2"] {
+    border-bottom: 1px solid #000;
+}
+
+h2[class~="main"]{
+    background-color: yellow;
+}
+
+/* 
+h2 태그중에 class이름 중 _txt2로 끝나는 대상을 모두 선택합니다
+*/
+
+/* 
+실무에서 자주 사용하는 선택자 정리
+1. 클래스 선택자
+.txt: 클래스가 txt인 모든 요소를 선택
+2. 클래스 선택자
+.txt.is : 클래스가 txt이면서 is를 동시에 가지는 요소를 선택
+3. 자손선택자
+.txt .is : 클래스가 txt인 요소의 자식중에 클래스가 is인 요소를 선택
+4. 아이디 선택자
+#txt : 아이디가 txt인 요소를 선택
+5. 전체선택자
+* : 모든 요소를 선택, 선택자 우선 순위가 가장 낮다
+6. 요소 선택자
+태그이름 : 태그 전부를 선택
+예) p : p태그 전부를 선택
+7. 직계자식 선택자
+.txt>p : 클래스가 txt인 요소의 자식중에 바로오는 p태그를 선택
+cf) .txt p VS .txt>p은 다른 선택자입니다
+8. AND 선택자
+.txt, .text : txt클래스와 text클래스를 동시에 선택
+9. 인접 형제 선택자
+.txt+p : 클래스 txt인 요소 바로 뒤에 배치된 
+첫 번째 p태그를 선택합니다
+10. 일반 형제 선택자
+.txt ~ p : 클래스가 txt인 요소부터 이후 모든 p 태그를 선택
+11. 속성 선택자
+11-1 a[href] : a태그중에 속성이 href인 모든 요소를 선택
+11-2 a[href="http"] : a태그중에 속성값이 http인 모든
+요소를 선택
+11-3 a[href^="http"] : a 태그중에 속성값이 시작인 http인
+요소를 선택
+11-4 a[href$="http"] : a태그중에 속성값이 마지막인 http
+요소를 선택
+11-5 a[href~="http"] : a태그중에 http가 포함된 요소를 선택
+
+12. 구조 가상선택자
+nth-of-type, nth-child
+
+13. 상태 선택자
+a:focus : 포커스가 있는 a요소 (포커스 상태에 있는 a요소)를
+선택하는 것
+input:checked = 선택된 상태인 input요소 지칭
+
+14. 가상 선택자
+a:after, a:before 이런것들
+*/
